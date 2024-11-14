@@ -6,13 +6,14 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:23:20 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/12 21:24:06 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/15 00:03:21 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int ft_putchar(char c)
 {
 		write(1, &c, 1);
+		return (1);
 }
