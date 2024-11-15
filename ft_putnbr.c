@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 19:30:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/15 19:30:59 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:11:00 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static long	ft_int_len(long nbr, int *len, int *sing)
 	return (saved_nbr);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoa(int n)
 {
 	long	nbr;
 	int		is_nigative;
@@ -56,4 +56,26 @@ char	*ft_itoa(int n)
 	if (is_nigative)
 		str[0] = '-';
 	return (str);
+}
+
+int ft_print_nbr(int nbr)
+{
+	int len = 0;
+    int sing = 0;
+    
+    ft_putstr(ft_itoa(nbr));
+	if (nbr < 0)
+	{
+		sing = 1;
+		nbr *= -1;
+		len = 1;
+	}
+	while (nbr)
+	{
+		nbr /= 10;
+		len++;
+	}
+    if (sing)
+        return (len + 1);
+	return (len);
 }
