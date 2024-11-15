@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr_help.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 21:07:36 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/15 19:37:29 by yaajagro         ###   ########.fr       */
+/*   Created: 2024/11/15 19:31:20 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/11/15 19:35:49 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
-#include <unistd.h>
-#include "libc.h"
-#include <stdio.h>
-#include <string.h>
+#include "ft_printf.h"
 
-int     ft_printf(const char *str, ...);
-int     ft_atoi(const char *str);
-int     ft_putchar(char c);
-int 	ft_putstr(char *s);
-int     ft_print_nbr(int nbr);
-char	*ft_itoa(int n);
-
-
-#endif
+int ft_print_nbr(int nbr)
+{
+	int len = 0;
+    int sing = 0;
+    
+    ft_putstr(ft_itoa(nbr));
+	if (nbr < 0)
+	{
+		sing = 1;
+		nbr *= -1;
+		len = 1;
+	}
+	while (nbr)
+	{
+		nbr /= 10;
+		len++;
+	}
+    if (sing)
+        return (len + 1);
+	return (len);
+}
