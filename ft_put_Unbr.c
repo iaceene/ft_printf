@@ -1,87 +1,79 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_put_Unbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 19:30:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/15 21:01:10 by yaajagro         ###   ########.fr       */
+/*   Created: 2024/11/15 20:14:20 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/11/15 21:10:00 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static long	ft_int_len(long nbr, int *len, int *sing)
+static unsigned int	ft_int_len(unsigned int nbr, int *len)
 {
-	long	saved_nbr;
+	unsigned int	saved_nbr;
 
 	*len = 0;
-	if (nbr < 0)
+	if (nbr == 0)
 	{
-		*sing = 1;
-		nbr *= -1;
 		*len = 1;
+		return (nbr);
 	}
 	saved_nbr = nbr;
 	while (nbr)
 	{
 		nbr /= 10;
-		*len = *len + 1;
+		(*len)++;
 	}
 	return (saved_nbr);
 }
 
-static char	*ft_itoa(int n)
+static char	*ft_itoa(unsigned int nbr)
 {
-	long	nbr;
-	int		is_nigative;
-	int		len;
-	char	*str;
+	int     len;
+	char    *str;
 
-	nbr = n;
-	is_nigative = 0;
-	if (n == 0)
+	if (nbr == 0)
 		return ("0");
-	nbr = ft_int_len(nbr, &len, &is_nigative);
+	nbr = ft_int_len(nbr, &len);
 	str = malloc(len + 1);
 	if (!str)
-		return (NULL);
-	str[len--] = '\0';
+		return NULL;
+	str[len] = '\0';
 	while (nbr)
 	{
-		str[len--] = (nbr % 10) + '0';
+		str[--len] = (nbr % 16) + '0';
 		nbr /= 10;
 	}
-	if (is_nigative)
-		str[0] = '-';
 	return (str);
 }
 
-int ft_print_nbr(int nbr)
+int ft_putUnbr(unsigned int nbr)
 {
-	int		len;
-    int		sing;
-    char	*str;
+	int     len;
+	char    *str;
 	
 	len = 0;
-	sing = 0;
 	str = ft_itoa(nbr);
-    ft_putstr(str);
+	ft_putstr(str);
 	if (nbr != 0)
 		free(str);
 	if (nbr == 0)
 		return (1);
-	if (nbr < 0)
-	{
-		sing = 1;
-		nbr *= -1;
-		len = 1;
-	}
 	while (nbr)
 	{
-		nbr /= 10;
+		nbr /= 16;
 		len++;
 	}
 	return (len);
 }
+
+// int main()
+// {
+//     int i = ft_putUnbr(1337);
+//     printf("\n%d\n", i);
+//     return (0);
+// }
