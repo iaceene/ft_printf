@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:07:36 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/15 20:31:07 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/15 20:54:08 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,7 @@ int     ft_printf(const char *str, ...);
 int     ft_putchar(char c);
 int 	ft_putstr(char *s);
 int     ft_print_nbr(int nbr);
+int     ft_print_hex(unsigned int nbr);
+int     ft_print_HEXA(unsigned int nbr);
 
 #endif
