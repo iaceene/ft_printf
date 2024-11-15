@@ -2,7 +2,7 @@
 
 int main()
 {
-    int i = printf("%%%%%%%%");
+    int i = printf("%%%%%%%s", "123");
 
     // va_list ap;
 
