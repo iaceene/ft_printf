@@ -1,10 +1,10 @@
-SRC = /src/ft_put_HEXA.c  \
-	  /src/ft_put_Unbr.c  \
-	  /src/ft_putaddres.c \
-	  /src/ft_putchar.c   \
-	  /src/ft_puthexa.c   \
-	  /src/ft_putnbr.c    \
-	  /src/ft_putstr.c
+SRC = ./src/ft_put_HEXA.c  \
+	  ./src/ft_put_Unbr.c  \
+	  ./src/ft_put_Address.c \
+	  ./src/ft_put_char.c   \
+	  ./src/ft_put_hex.c   \
+	  ./src/ft_put_nbr.c    \
+	  ./src/ft_put_str.c
 
 INCLUD = /includes/ft_printf.h
 NAME = libftprintf.a
@@ -20,7 +20,7 @@ $(NAME) : $(OBJ)
 	cc $(CFLAGS) -c $< -o $@
 
 clean :
-	rm -f $(SRC_O) $(B_SRC_O)
+	rm -f $(OBJ)
 
 fclean : clean
 	rm -f $(NAME)
