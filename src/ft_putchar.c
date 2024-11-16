@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:23:20 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/16 19:02:57 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:49:16 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 int ft_putchar(char c)
 {

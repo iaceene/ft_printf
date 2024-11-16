@@ -6,11 +6,11 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:14:20 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/15 21:15:29 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/16 19:49:23 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../includes/ft_printf.h"
 
 static unsigned int ft_int_len(unsigned int nbr, int *len)
 {
