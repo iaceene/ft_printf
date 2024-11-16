@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 21:23:20 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/15 00:03:21 by yaajagro         ###   ########.fr       */
+/*   Created: 2024/11/12 21:21:19 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/11/16 19:02:42 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putchar(char c)
+int	ft_putstr(char *s)
 {
-		write(1, &c, 1);
-		return (1);
+	int	i;
+
+	if (!s)
+		return (write(1, "(null)", 6));
+	i = 0;
+	while (s[i])
+	{
+		ft_putchar(s[i]);
+		i++;
+	}
+	return (i);
 }
