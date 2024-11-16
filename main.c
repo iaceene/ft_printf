@@ -10,7 +10,7 @@ int main(int c, char *v[])
     // atexit(ft);
     int count = 0;
     int counnt = 0;
-    int i = 0;
+    int i = 1337;
     count += ft_print_hex(i);
     puts("");
     count += ft_print_HEXA(i);
@@ -26,7 +26,7 @@ int main(int c, char *v[])
     counnt += printf("%d\n", i) - 1;
     counnt += printf("%u\n", i) - 1;
     counnt += printf("%p\n", &i);
-    puts("\n====");
+    puts("====");
     printf("min %d\n", count);
     printf("sys %d\n", counnt);
     return (0);
