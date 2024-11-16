@@ -7,10 +7,10 @@ void ft()
 
 int main(int c, char *v[])
 {
-    //atexit(ft);
+    // atexit(ft);
     int count = 0;
     int counnt = 0;
-    int i = 2147483647;
+    int i = 0;
     count += ft_print_hex(i);
     puts("");
     count += ft_print_HEXA(i);
@@ -19,13 +19,13 @@ int main(int c, char *v[])
     puts("");
     count += ft_putUnbr(i);
     puts("");
-	ft_print_addres(&i);
+	count += ft_print_addres(&i);
     puts("\n====");
     counnt += printf("%x\n", i) - 1;
     counnt += printf("%X\n", i) - 1;
     counnt += printf("%d\n", i) - 1;
     counnt += printf("%u\n", i) - 1;
-    printf("%p\n", &i);
+    counnt += printf("%p\n", &i);
     puts("\n====");
     printf("min %d\n", count);
     printf("sys %d\n", counnt);

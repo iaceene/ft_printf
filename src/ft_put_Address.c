@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putaddres.c                                     :+:      :+:    :+:   */
+/*   ft_put_Address.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:09:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/16 20:48:04 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/16 23:03:44 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ int     ft_print_addres(unsigned long long nbr)
 {
 	char	list[17];
 	int		len;
+	int		count;
 
-	if (nbr == 0)
-		return (ft_putchar('0'));
+	count = 0;
 	len = Ulong_len(nbr);
 	list[len] = '\0';
 	ft_cpy(nbr, list, len);
-	ft_putstr("0x");
-	ft_putstr(list);
-	return (len + 2);
+	count += ft_putstr("0x");
+	count += ft_putstr(list);
+	return (count + 1);
 }
