@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:27:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 16:45:56 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 17:37:20 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	print_length = 0;
+	if (write(1, NULL, 0) == -1)
+		return (-1);
 	va_start(args, str);
 	while (str[i])
 	{

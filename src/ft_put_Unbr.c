@@ -6,71 +6,56 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 19:30:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 16:48:39 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 18:06:11 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static unsigned int	ft_int_len(unsigned int nbr, int *len, int *sing)
+static int	ft_int_len(long n)
 {
-	long	saved_nbr;
-
-	*len = 0;
-	if (nbr < 0)
-	{
-		*sing = 1;
-		nbr *= -1;
-		*len = 1;
-	}
-	saved_nbr = nbr;
-	while (nbr)
-	{
-		nbr /= 10;
-		*len = *len + 1;
-	}
-	return (saved_nbr);
-}
-
-static char	*ft_itoa(unsigned int n)
-{
-	long	nbr;
-	int		is_nigative;
-	int		len;
-	char	*str;
-
-	nbr = n;
-	is_nigative = 0;
-	if (n == 0)
-		return ("0");
-	nbr = ft_int_len(nbr, &len, &is_nigative);
-	str = malloc(len + 1);
-	if (!str)
-		return (NULL);
-	str[len--] = '\0';
-	while (nbr)
-	{
-		str[len--] = (nbr % 10) + '0';
-		nbr /= 10;
-	}
-	if (is_nigative)
-		str[0] = '-';
-	return (str);
-}
-
-int	ft_put_unbr(unsigned int nbr)
-{
-	int		len;
-	int		sing;
-	char	*str;
+	int	len;
 
 	len = 0;
-	sing = 0;
-	str = ft_itoa(nbr);
-	len = ft_putstr(str);
-	if (nbr != 0)
-		free(str);
-	if (nbr == 0)
-		return (1);
+	if (n < 0)
+		n *= -1;
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
 	return (len);
+}
+
+static void	ft_cpy(long nbr, char *str, int len)
+{
+	str[len] = '\0';
+	while (nbr)
+	{
+		str[--len] = (nbr % 10) + '0';
+		nbr /= 10;
+	}
+}
+
+int	ft_put_unbr(unsigned int n)
+{
+	char	list[12];
+	int		len;
+	long	nbr;
+
+	nbr = n;
+	len = ft_int_len(nbr);
+	if (nbr == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
+	if (nbr < 0)
+	{
+		len++;
+		list[0] = '-';
+		nbr *= -1;
+	}
+	ft_cpy(nbr, list, len);
+	return (ft_putstr(list));
 }

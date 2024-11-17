@@ -5,70 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 20:14:20 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 16:42:55 by yaajagro         ###   ########.fr       */
+/*   Created: 2024/11/15 19:30:43 by yaajagro          #+#    #+#             */
+/*   Updated: 2024/11/17 18:05:59 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static unsigned int	ft_int_len(unsigned int nbr, int *len)
+static int	ft_int_len(unsigned int n)
 {
-	unsigned int	saved_nbr;
+	int	len;
 
-	*len = 0;
-	if (nbr == 0)
+	len = 0;
+	while (n)
 	{
-		*len = 1;
-		return (nbr);
+		n /= 16;
+		len++;
 	}
-	saved_nbr = nbr;
-	while (nbr)
-	{
-		nbr /= 16;
-		(*len)++;
-	}
-	return (saved_nbr);
+	return (len);
 }
 
-static char	*ft_itoa(unsigned int nbr)
+static void	ft_cpy(unsigned int nbr, char *str, int len)
 {
-	int		len;
-	char	*str;
-	char	*hex;
+	char	*s;
 
-	hex = "0123456789ABCDEF";
-	if (nbr == 0)
-		return ("0");
-	nbr = ft_int_len(nbr, &len);
-	str = malloc(len + 1);
-	if (!str)
-		return (NULL);
+	s = "0123456789ABCDEF";
 	str[len] = '\0';
 	while (nbr)
 	{
-		str[--len] = hex[nbr % 16];
+		str[--len] = s[nbr % 16];
 		nbr /= 16;
 	}
-	return (str);
 }
 
 int	ft_print_hexa(unsigned int nbr)
 {
+	char	list[12];
 	int		len;
-	char	*str;
 
-	len = 0;
-	str = ft_itoa(nbr);
-	ft_putstr(str);
-	if (nbr != 0)
-		free(str);
+	len = ft_int_len(nbr);
 	if (nbr == 0)
-		return (1);
-	while (nbr)
-	{
-		nbr /= 16;
-		len++;
-	}
-	return (len);
+		return (ft_putchar('0'));
+	ft_cpy(nbr, list, len);
+	return (ft_putstr(list));
 }
