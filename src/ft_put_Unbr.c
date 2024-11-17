@@ -6,19 +6,17 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 19:30:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 18:06:11 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 18:11:54 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ft_int_len(long n)
+static int	ft_int_len(unsigned int n)
 {
 	int	len;
 
 	len = 0;
-	if (n < 0)
-		n *= -1;
 	while (n)
 	{
 		n /= 10;
@@ -27,7 +25,7 @@ static int	ft_int_len(long n)
 	return (len);
 }
 
-static void	ft_cpy(long nbr, char *str, int len)
+static void	ft_cpy(unsigned int nbr, char *str, int len)
 {
 	str[len] = '\0';
 	while (nbr)
@@ -37,25 +35,14 @@ static void	ft_cpy(long nbr, char *str, int len)
 	}
 }
 
-int	ft_put_unbr(unsigned int n)
+int	ft_put_unbr(unsigned int nbr)
 {
 	char	list[12];
 	int		len;
-	long	nbr;
 
-	nbr = n;
 	len = ft_int_len(nbr);
 	if (nbr == 0)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	if (nbr < 0)
-	{
-		len++;
-		list[0] = '-';
-		nbr *= -1;
-	}
+		return (ft_putchar('0'));
 	ft_cpy(nbr, list, len);
 	return (ft_putstr(list));
 }
