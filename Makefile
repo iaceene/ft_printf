@@ -12,7 +12,7 @@ NAME = libftprintf.a
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 
-all : $(NAME)
+all : 
 
 $(NAME) : $(OBJ)
 	ar -rc $(NAME) $(OBJ)
