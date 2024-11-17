@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_put_nbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 19:30:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/16 19:49:28 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:50:34 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,30 +58,19 @@ static char	*ft_itoa(int n)
 	return (str);
 }
 
-int ft_print_nbr(int nbr)
+int	ft_print_nbr(int nbr)
 {
 	int		len;
-    int		sing;
-    char	*str;
-	
+	int		sing;
+	char	*str;
+
 	len = 0;
 	sing = 0;
 	str = ft_itoa(nbr);
-    ft_putstr(str);
+	len = ft_putstr(str);
 	if (nbr != 0)
 		free(str);
 	if (nbr == 0)
 		return (1);
-	if (nbr < 0)
-	{
-		sing = 1;
-		nbr *= -1;
-		len = 1;
-	}
-	while (nbr)
-	{
-		nbr /= 10;
-		len++;
-	}
 	return (len);
 }

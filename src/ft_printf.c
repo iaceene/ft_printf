@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:27:45 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 16:19:23 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:45:56 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	ft_formats(va_list args, const char format)
 	else if (format == 'd' || format == 'i')
 		print_length += ft_print_nbr(va_arg(args, int));
 	else if (format == 'u')
-		print_length += ft_putUnbr(va_arg(args, unsigned int));
+		print_length += ft_put_unbr(va_arg(args, unsigned int));
 	else if (format == 'x')
 		print_length += ft_print_hex(va_arg(args, unsigned int));
 	else if (format == 'X')
-		print_length += ft_print_HEXA(va_arg(args, unsigned int));
+		print_length += ft_print_hexa(va_arg(args, unsigned int));
 	else if (format == '%')
 		print_length += ft_putchar('%');
 	return (print_length);
@@ -57,5 +57,5 @@ int	ft_printf(const char *str, ...)
 		i++;
 	}
 	va_end(args);
-    return (print_length);
+	return (print_length);
 }

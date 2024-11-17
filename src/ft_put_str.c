@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:21:19 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/16 23:09:37 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:45:14 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_putstr(char *s)
 {
 	int	i;
-	int count;
-	
+	int	count;
+
 	count = 0;
 	if (!s)
 		return (write(1, "(null)", 6));

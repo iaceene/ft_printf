@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 21:07:36 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 16:33:59 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:45:46 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_putchar(int c);
 int	ft_putstr(char *s);
 int	ft_print_nbr(int nbr);
 int	ft_print_hex(unsigned int nbr);
-int	ft_print_HEXA(unsigned int nbr);
-int	ft_putUnbr(unsigned int nbr);
+int	ft_print_hexa(unsigned int nbr);
+int	ft_put_unbr(unsigned int nbr);
 int	ft_print_addres(unsigned long nbr);
 
 #endif

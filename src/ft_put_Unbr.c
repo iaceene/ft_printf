@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 19:30:43 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/16 19:49:01 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:48:39 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static unsigned int	ft_int_len(unsigned int nbr, int *len, int *sing)
 	return (saved_nbr);
 }
 
-static char	*ft_Uitoa(unsigned int n)
+static char	*ft_itoa(unsigned int n)
 {
 	long	nbr;
 	int		is_nigative;
@@ -58,30 +58,19 @@ static char	*ft_Uitoa(unsigned int n)
 	return (str);
 }
 
-int     ft_putUnbr(unsigned int nbr)
+int	ft_put_unbr(unsigned int nbr)
 {
 	int		len;
-    int		sing;
-    char	*str;
-	
+	int		sing;
+	char	*str;
+
 	len = 0;
 	sing = 0;
-	str = ft_Uitoa(nbr);
-    ft_putstr(str);
+	str = ft_itoa(nbr);
+	len = ft_putstr(str);
 	if (nbr != 0)
 		free(str);
 	if (nbr == 0)
 		return (1);
-	if (nbr < 0)
-	{
-		sing = 1;
-		nbr *= -1;
-		len = 1;
-	}
-	while (nbr)
-	{
-		nbr /= 10;
-		len++;
-	}
 	return (len);
 }

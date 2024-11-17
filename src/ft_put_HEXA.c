@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 20:14:20 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/16 19:48:52 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:42:55 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ static unsigned int	ft_int_len(unsigned int nbr, int *len)
 
 static char	*ft_itoa(unsigned int nbr)
 {
-	int     len;
-	char    *str;
-	char    *hex;
-	
-	hex = "0123456789ABCDEF"; 
+	int		len;
+	char	*str;
+	char	*hex;
+
+	hex = "0123456789ABCDEF";
 	if (nbr == 0)
 		return ("0");
 	nbr = ft_int_len(nbr, &len);
 	str = malloc(len + 1);
 	if (!str)
-		return NULL;
+		return (NULL);
 	str[len] = '\0';
 	while (nbr)
 	{
@@ -53,11 +53,11 @@ static char	*ft_itoa(unsigned int nbr)
 	return (str);
 }
 
-int ft_print_HEXA(unsigned int nbr)
+int	ft_print_hexa(unsigned int nbr)
 {
-	int     len;
-	char    *str;
-	
+	int		len;
+	char	*str;
+
 	len = 0;
 	str = ft_itoa(nbr);
 	ft_putstr(str);
