@@ -4,7 +4,8 @@ SRC = ./src/ft_put_HEXA.c  \
 	  ./src/ft_put_char.c   \
 	  ./src/ft_put_hex.c   \
 	  ./src/ft_put_nbr.c    \
-	  ./src/ft_put_str.c
+	  ./src/ft_put_str.c  \
+	  ./src/ft_printf.c
 
 INCLUD = /includes/ft_printf.h
 NAME = libftprintf.a

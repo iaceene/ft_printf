@@ -19,7 +19,7 @@ int main(int c, char *v[])
     puts("");
     count += ft_putUnbr(i);
     puts("");
-	count += ft_print_addres(&i);
+    count  += ft_print_addres(&i);
     puts("\n====");
     counnt += printf("%x\n", i) - 1;
     counnt += printf("%X\n", i) - 1;

@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:09:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/16 23:03:44 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 00:31:38 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	ft_cpy(unsigned long nbr, char *str, int len)
 	}
 }
 
-int     ft_print_addres(unsigned long long nbr)
+int     ft_print_addres(unsigned long nbr)
 {
 	char	list[17];
 	int		len;
