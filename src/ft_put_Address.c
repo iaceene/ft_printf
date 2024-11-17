@@ -6,7 +6,7 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:09:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 00:31:38 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/17 16:25:24 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ int     ft_print_addres(unsigned long nbr)
 	len = Ulong_len(nbr);
 	list[len] = '\0';
 	ft_cpy(nbr, list, len);
-	count += ft_putstr("0x");
+	if (nbr == 0)
+		count += ft_putstr("0x0");
+	else
+		count += ft_putstr("0x");
 	count += ft_putstr(list);
-	return (count + 1);
+	return (count);
 }
