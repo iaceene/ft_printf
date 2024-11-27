@@ -6,13 +6,13 @@
 /*   By: yaajagro <yaajagro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 22:09:12 by yaajagro          #+#    #+#             */
-/*   Updated: 2024/11/17 16:39:03 by yaajagro         ###   ########.fr       */
+/*   Updated: 2024/11/19 21:12:13 by yaajagro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int	ulong_len(unsigned long n)
+static int	ulong_len(unsigned long long n)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ static int	ulong_len(unsigned long n)
 	return (len);
 }
 
-static void	ft_cpy(unsigned long nbr, char *str, int len)
+static void	ft_cpy(unsigned long long nbr, char *str, int len)
 {
 	char	*s;
 
@@ -37,7 +37,7 @@ static void	ft_cpy(unsigned long nbr, char *str, int len)
 	}
 }
 
-int	ft_print_addres(unsigned long nbr)
+int	ft_print_addres(unsigned long long nbr)
 {
 	char	list[17];
 	int		len;
