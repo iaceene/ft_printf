@@ -30,7 +30,7 @@ The goal of this project is to:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ft_printf.git
+   git clone https://github.com/iaceene/ft_printf.git
    cd ft_printf
 2. Compile the program using Makefile (if provided):
 ```bash
